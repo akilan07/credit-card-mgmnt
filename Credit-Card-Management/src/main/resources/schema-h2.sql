@@ -1,0 +1,4 @@
+CREATE TABLE customer(cust_id INT PRIMARY KEY AUTO_INCREMENT, cust_username VARCHAR(100), card_no VARCHAR(255), product_id INT, CONSTRAINT FK_CUST_PRODUCT FOREIGN KEY (product_id) REFERENCES product(product_id));
+CREATE TABLE product(product_id INT PRIMARY KEY AUTO_INCREMENT, product_name VARCHAR(50), credit_score VARCHAR(10), limit INT);
+CREATE TABLE benifit(benifit_id INT PRIMARY KEY AUTO_INCREMENT, benifit_desc VARCHAR(255));
+CREATE TABLE product_benifit(product_id INT, benifit_id INT, CONSTRAINT FK_PRODUCT FOREIGN KEY (product_id) REFERENCES product(product_id) , CONSTRAINT FK_BENIFIT FOREIGN KEY (benifit_id) REFERENCES product(benifit_id));
